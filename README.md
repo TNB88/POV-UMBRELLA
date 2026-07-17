@@ -5,14 +5,13 @@ Repo này chỉ phục vụ dữ liệu API online cho bản POV và Umbrella đ
 ## Cách dùng
 
 1. Tạm chuyển repo sang **Public**.
-2. Mở POV hoặc Umbrella → My Services/Accounts → **Nhập mã nhận API online (POV + Umbrella)**.
-3. Nhập mã nhận. Một bản ghi có thể chứa cả Real-Debrid và TorBox; plugin kiểm tra từng dịch vụ rồi ghi key cho cả hai plugin.
-4. Chuyển repo về **Private** sau khi dùng xong. Khi repo Private, Kodi không tải được dữ liệu mới cho tới khi mở Public lại.
+2. Sửa `debrid_keys.json`: thay hai dòng `DAN_API_KEY_...` bằng key thật rồi commit lên nhánh `main`.
+3. Mở POV hoặc Umbrella → My Services/Accounts → **Nhập mã nhận API online (POV + Umbrella)**.
+4. Nhập tên, ví dụ `teo`. Plugin kiểm tra Real-Debrid/TorBox rồi ghi key cho cả hai plugin.
+5. Chuyển repo về **Private** sau khi dùng xong. Khi repo Private, Kodi không tải được dữ liệu mới cho tới khi mở Public lại.
 
-API key không được ghi dạng chữ thường. Tệp dữ liệu dùng bản ghi mã hóa PBKDF2-HMAC-SHA256; chỉ người có mã nhận mới giải mã được nội dung.
+API key được lưu trực tiếp theo yêu cầu. Bất kỳ ai cũng có thể đọc key khi repo đang Public; việc chuyển repo về Private không xóa key khỏi lịch sử Git.
 
-## Thêm hoặc đổi dữ liệu
+## Thêm người khác
 
-Chạy công cụ `create_debrid_record.py` ở thư mục làm việc trên máy, nhập mã nhận và key trong cửa sổ hỏi riêng. Công cụ chỉ ghi bản mã hóa vào `debrid_keys.json`; sau đó commit/push riêng tệp này lên nhánh `main`. Không dán key vào chat, lệnh PowerShell hoặc README.
-
-Tệp mẫu hiện đang để `records` rỗng vì chưa có API key thật được cung cấp.
+Sao chép khối `teo`, đổi thành tên mới và điền hai API key tương ứng. Tên nhập trong Kodi không phân biệt chữ hoa/chữ thường.

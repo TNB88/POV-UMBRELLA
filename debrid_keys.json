@@ -1,4 +1,9 @@
 {
-  "version": 1,
-  "records": []
+  "version": 2,
+  "users": {
+    "teo": {
+      "real_debrid": "DAN_API_KEY_REAL_DEBRID_VAO_DAY",
+      "torbox": "DAN_API_KEY_TORBOX_VAO_DAY"
+    }
+  }
 }
